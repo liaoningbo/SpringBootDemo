@@ -1,0 +1,29 @@
+server:
+  context-path: /lnb
+  port: 8888
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.99.100:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    initial-size: 5
+    max-idle: 10
+    min-idle: 5
+    auto-commit: true
+    test-while-idle: true
+    time-between-eviction-runs-millis: 18800
+    minEvictableIdleTimeMillis: 300000
+    validation-query: SELECT 1
+    maximum-pool-size: 100
+    max-wait: 10000
+    test-on-borrow: false
+
+mybatis:
+  type-aliases-package: com.lnb.model
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath*:mapper/*.xml
+logging:
+  level:
+    com.hualala.supplychain.tidbreport.mapper : debug
