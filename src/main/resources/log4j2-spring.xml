@@ -18,7 +18,6 @@
             <!-- 输出日志的格式 -->
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
-        <CatAppender name="CatAppender"/>
         <!-- 打印出所有的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档 -->
         <RollingRandomAccessFile name="infoFile" fileName="${fileName}/${hostName}_info.log" immediateFlush="false"
                                  filePattern="${fileGz}/$${date:yyyy-MM}/${hostName}_info.%d{yyyy-MM-dd}.gz">
@@ -106,7 +105,6 @@
             <AppenderRef ref="infoFile"/>
             <AppenderRef ref="bussinessFile"/>
             <AppenderRef ref="errorFile"/>
-            <AppenderRef ref="CatAppender"/>
             <AppenderRef ref="console"/>
         </AsyncRoot>
     </Loggers>
