@@ -1,8 +1,8 @@
-## 一、安装jenkins
-jenkins卸载：
-rpm -e jenkins
-rpm -ql jenkins 
-find / -iname jenkins | xargs -n 1000 rm -rf
+# 一、安装jenkins 
+## jenkins卸载 
+rpm -e jenkins  
+rpm -ql jenkins   
+find / -iname jenkins | xargs -n 1000 rm -rf 
 jenkins安装
 在linux宿主机上安装，jenkins只是一个构建工具，构建完项目之后，在使用dockerfile生成镜像，然后启动镜像，达到项目启动的效果
 以下是jenkins的安装步骤：
